@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class RegistroEdades {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int edadMayor = Integer.MIN_VALUE;
+        int edadMenor = Integer.MAX_VALUE;
+        int mayoresDeEdad = 0;
+        int menoresDeEdad = 0;
+
+        for (int i = 1; i <= 15; i++) {
+            System.out.print("Ingrese la edad de la persona " + i + ": ");
+            int edad = teclado.nextInt();
+
+            if (edad > edadMayor) edadMayor = edad;
+            if (edad < edadMenor) edadMenor = edad;
+
+            if (edad >= 18) {
+                mayoresDeEdad++;
+            } else {
+                menoresDeEdad++;
+            }
+        }
+
+        System.out.println("\nEdad mayor: " + edadMayor);
+        System.out.println("Edad menor: " + edadMenor);
+        System.out.println("Mayores de edad: " + mayoresDeEdad);
+        System.out.println("Menores de edad: " + menoresDeEdad);
+        teclado.close();
+    }
+}
